@@ -25,6 +25,7 @@ export class DataService {
   updateEventDate(date: Moment | null | undefined) {
     if (!date) {
       localStorage.removeItem(DATE_KEY)
+      this.eventDateSubject.next(undefined)
       return
     }
 

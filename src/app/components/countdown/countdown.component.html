@@ -1,9 +1,9 @@
 <div class="container">
     <div class="header" appScaleText>
-        <span>Time to {{ eventTitle | async }}</span>
+        <span *ngIf="!!(eventTitle | async)">Time to {{ eventTitle | async }}</span>
     </div>
     <div class="countdown" appScaleText>
-        <span>{{ days }} Days, {{ hours }} Hours, {{ minutes }} Minutes, {{ seconds }} Seconds</span>
-
+        <span *ngIf="!!(eventDate | async)"> {{ days }} Days, {{ hours }} Hours, {{ minutes }} Minutes, {{ seconds }}
+            Seconds</span>
     </div>
 </div>

@@ -16,6 +16,7 @@ export class CountdownComponent implements OnInit, OnDestroy {
   constructor(private dataService: DataService) {}
   countdown$!: Observable<Moment | undefined>
   eventTitle = this.dataService.eventTitle$
+  eventDate = this.dataService.eventDate$
 
   private subscription!: Subscription
   days: number = 0
@@ -37,17 +38,25 @@ export class CountdownComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe()
   }
 
+  private resetTime() {
+    this.days = 0
+    this.hours = 0
+    this.minutes = 0
+    this.seconds = 0
+  }
+
   private calculateTime(date?: Moment): void {
-    if (!date) return
+    console.log(date)
+    if (!date) {
+      this.resetTime()
+      return
+    }
+
     const now = new Date().getTime()
     const difference = date.toDate().getTime() - now
 
     if (difference <= 0) {
-      this.days = 0
-      this.hours = 0
-      this.minutes = 0
-      this.seconds = 0
-
+      this.resetTime()
       return
     }
 
