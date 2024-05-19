@@ -53,7 +53,7 @@ export class ScaleTextDirective implements AfterViewInit, OnDestroy {
       let fontSize = 10
       this.renderer.setStyle(textElement, 'fontSize', `${fontSize}px`)
 
-      while (textElement.offsetWidth < containerWidth && fontSize < 300) {
+      while (textElement.offsetWidth < containerWidth) {
         fontSize += 1
         this.renderer.setStyle(textElement, 'fontSize', `${fontSize}px`)
       }
