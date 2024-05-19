@@ -1,0 +1,6 @@
+<mat-form-field appearance="outline">
+    <mat-label>{{ fieldTitle }}</mat-label>
+    <input matInput [matDatepicker]="picker" placeholder="Placeholder" (focus)="openDatepicker()"
+        [value]="value | async" (dateChange)="onValueChanged($event.value)">
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>

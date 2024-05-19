@@ -1,0 +1,4 @@
+<mat-form-field appearance="outline">
+    <mat-label>{{ fieldTitle }}</mat-label>
+    <input matInput type="text" placeholder="Placeholder" [value]="value | async" (change)="onValueChanged($event)">
+</mat-form-field>
