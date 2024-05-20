@@ -4,9 +4,6 @@ Clone the repo, `npm install`, `npm start`
 ## Deployed page
 https://jennyalke.github.io/NC/
 
-**Once you feel ready to share your solution, please:**
-
-
 ## Improvements
 
 There is of course room for improvements some of them could be:
